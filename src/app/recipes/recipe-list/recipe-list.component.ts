@@ -1,6 +1,7 @@
-import { Component, OnInit ,Input,} from '@angular/core';
-// import {ClickedItem} from './recipe-item/recipe-item.component';
+import { Component, OnInit } from '@angular/core';
+
 import { Recipe } from '../recipe.model';
+import { RecipeService } from '../recipe.service';
 
 @Component({
   selector: 'app-recipe-list',
@@ -8,29 +9,12 @@ import { Recipe } from '../recipe.model';
   styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent implements OnInit {
-  recipes: Recipe[] = [
-    new Recipe('A Test Recipe1', 'This is simply a test', 'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg'),
-    new Recipe('A Test Recipe2', 'This is simply a test', 'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg')
-  ];
-  
-@Input()recipe:Recipe;
-// @Input()clk:ClickedItem;
+  recipes: Recipe[];
 
-onClickitem(ClickedItem){
-  console.log("asdasd",ClickedItem);
-  
-}
-  constructor() {
-// console.log('clickeditem',this.clk);
-    
-   }
-
-
-  ngOnInit() {
+  constructor(private recipeService: RecipeService) {
   }
 
-
-
-
-
+  ngOnInit() {
+    this.recipes = this.recipeService.getRecipes();
+  }
 }

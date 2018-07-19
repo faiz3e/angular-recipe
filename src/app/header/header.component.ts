@@ -1,22 +1,13 @@
-import { Component ,EventEmitter,Output} from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html'
 })
 export class HeaderComponent {
-@Output() selectedTab=new EventEmitter<string>();
+  @Output() featureSelected = new EventEmitter<string>();
 
-onSelect(e:string){
-console.log("clicked",e);
-// this.open=e;
-this.selectedTab.emit(e)
-
+  onSelect(feature: string) {
+    this.featureSelected.emit(feature);
   }
-
-
-
-//   'recipe')">Recipes</a></li>
-//   <li><a href="#" (click)="('shoping-list')" >Shopping List</a></li>
-// </ul>
 }
