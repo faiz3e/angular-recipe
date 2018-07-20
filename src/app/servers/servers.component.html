@@ -1,0 +1,35 @@
+<input
+[ngClass]="{ green : serverCreated ===true, red : serverCreated===false  }"
+ type="text"
+ class="form-control"
+ (input)="onUpdateName($event)" 
+ />
+
+<button class="btn" 
+[disabled]="!allow"
+(click)="onClicked()">
+ change status
+</button>
+
+<button class="btn btn-primary" 
+(click)='addServer()'
+>
+ add server
+</button>
+<p *ngIf="serverCreated; else noServer"  >
+   online server {{name}}
+</p>
+<ng-template #noServer><p>
+    Enter some value
+</p></ng-template>
+
+<app-server *ngFor="let server of servers" ></app-server>
+
+<!-- <p *ngFor="let server of servers; let id = index">{{server.name}} {{server.id}}</p> -->
+
+
+
+
+
+
+

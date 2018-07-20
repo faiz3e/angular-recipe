@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+
+      <div class="card bg-default" style="margin-top: 15px">
+        <h6 class="card-header">
+          {{product.prod_name}}
+        </h6>
+        <a style="cursor: pointer;"  (click)="productItemClicked()" >
+          <div class="card-body">
+            <img [src]='product.prod_img' alt="painting name">
+          </div>
+        </a>
+       
+      </div>
+  
+    </div>
+  </div>
+</div>
+<!-- { prod_id: 5, prod_name: 'nature5', prod_desc: 'abstract by max5', prod_img: "./favicon.ico", prod_price: 555 }, -->

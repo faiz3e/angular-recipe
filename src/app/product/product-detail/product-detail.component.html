@@ -1,0 +1,26 @@
+
+
+<p *ngIf="!productSelected">
+  select a product to display
+</p>
+<div *ngIf="productSelected">
+  <div class="row">
+<div class="col-md-12">
+  <h4>
+{{productSelected.prod_name}}
+  </h4>
+  <img [src]="productSelected.prod_img" style="height: 300px;">
+</div>
+<p>{{productSelected.prod_desc}}</p>
+<hr>
+</div>
+<div class="row"  style="background-color: rgba(0,0,0,.03)">
+  <button class="btn btn-success">Buy Now</button>
+  <button class="btn btn-primary">Wishlist</button>
+  <!-- <button>Buy</button> -->
+  
+  <p>price : {{productSelected.prod_price}}</p>
+  
+  <div class="col-md-12">
+  </div>
+  <!-- <p *ngIf="productSelected">{{productSelected.prod_id}}</p> -->

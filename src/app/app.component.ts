@@ -1,14 +1,18 @@
 import { Component } from '@angular/core';
-
+import { ProductService } from "./product.service";
+import { Product } from "./product.model";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers:[ProductService]
 })
 export class AppComponent {
-  loadedFeature = 'recipe';
+  itemSelected:Product
+constructor(private productService:ProductService){}
 
-  onNavigate(feature: string) {
-    this.loadedFeature = feature;
-  }
+
+ngOnInit(){
+
+}
 }
